@@ -57,6 +57,15 @@ alias cp="cp -i"                                                # Confirm before
 alias df='df -h'                                                # Human-readable sizes
 alias free='free -m'                                            # Show sizes in MB
 alias gitu='git add . && git commit && git push'
+alias ls='ls --color=auto'
+alias grep='grep --colour=auto'
+alias egrep='egrep --colour=auto'
+alias fgrep='fgrep --colour=auto'
+alias pac='sudo pacman -S'
+alias pacr='sudo pacman -Rns'
+alias pyyu='sudo pacman -Syyu'
+alias pacu='sudo pacman -Su'
+alias ubuntu-sshs='ssh ubuntu@54.38.188.31'
 
 # Theming section  
 autoload -U compinit colors zcalc
