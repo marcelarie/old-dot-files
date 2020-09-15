@@ -15,6 +15,7 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set scrolloff=8
+set showcmd
 
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
@@ -23,6 +24,7 @@ Plug 'valloric/youcompleteme'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'lilydjwg/colorizer'
 call plug#end()
 
 colorscheme gruvbox
@@ -34,6 +36,12 @@ map <C-n> :NERDTreeToggle<CR>
 
 let g:typescript_indent_disable = 1
 
+" Leader Key
+let mapleader = " "
+map <leader>w :w<cr>
+map <leader>W :w!<cr>
+map <leader>q :q<cr>
+map <leader>Q :q!<cr>
 " Remove newbie crutches in Command Mode
  cnoremap <Down> <Nop>
  cnoremap <Left> <Nop>
