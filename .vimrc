@@ -42,6 +42,11 @@ map <leader>w :w<cr>
 map <leader>W :w!<cr>
 map <leader>q :q<cr>
 map <leader>Q :q!<cr>
+
+" AutoRun python files (SPACE+e) 
+
+autocmd FileType python map <buffer> <leader>e <esc>:w<CR>:exec '!python' shellescape(@%, 1)<CR>
+
 " Remove newbie crutches in Command Mode
  cnoremap <Down> <Nop>
  cnoremap <Left> <Nop>
