@@ -38,14 +38,20 @@ let g:typescript_indent_disable = 1
 
 " Leader Key
 let mapleader = " "
+" Saves the file.
 map <leader>w :w<cr>
+" Saves the file with force.
 map <leader>W :w!<cr>
+" Quits vim.
 map <leader>q :q<cr>
+" Quits vim with force.
 map <leader>Q :q!<cr>
 
 " AutoRun python files (SPACE+e) 
-
+" Runs the code.
 autocmd FileType python map <buffer> <leader>e <esc>:w<CR>:exec '!python' shellescape(@%, 1)<CR>
+" Runs the code but clears the terminal before.
+autocmd FileType python map <buffer> <leader>E <esc>:w<esc>:!clear<CR>:exec '!python' shellescape(@%, 1)<CR>
 
 " Remove newbie crutches in Command Mode
  cnoremap <Down> <Nop>
