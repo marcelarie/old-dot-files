@@ -19,6 +19,7 @@ set noshowcmd
 set noruler
 set splitbelow
 set splitright
+set timeoutlen=500
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
@@ -55,9 +56,9 @@ map <leader>Q :q!<cr>
 
 " AutoRun python files (SPACE+e) 
 " Runs the code.
-autocmd FileType python map <buffer> <leader>e <esc>:w<CR>:5split term://python3 %<CR>
+autocmd FileType python map <buffer> <leader>e <esc>:w<CR>:8split term://python3 %<CR>
 " Runs the code but clears the terminal before.
-autocmd FileType python map <buffer> <leader>E <esc>:w<esc>:!clear<CR>:5split term://python shellescape(@%, 1)<CR>
+autocmd FileType python map <buffer> <leader>E <esc>:w<esc>:!clear<CR>:8split term://python shellescape(@%, 1)<CR>
 
 " Remove newbie crutches in Command Mode
  cnoremap <Down> <Nop>
