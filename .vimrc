@@ -24,6 +24,7 @@ set timeoutlen=500
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'valloric/youcompleteme'
 Plug 'turbio/bracey.vim'
@@ -41,7 +42,6 @@ set background=dark
 "let g:airline_theme='wombat'
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
-
 let g:typescript_indent_disable = 1
 
 
@@ -57,6 +57,10 @@ map <leader>q :q<cr>
 map <leader>Q :q!<cr>
 " Split screen and resize 35
 nnoremap <leader>r :wincmd v<bar> :Ex <bar> :vertical resize 35<CR>
+" Fugitive keybidings
+nmap <leader>gs :G<CR>
+nmap <leader>gh :diffget //3<CR>
+nmap <leader>gl :diffget //2<CR>
 " AutoRun python files (SPACE+e) 
 " Runs the code.
 autocmd FileType python map <buffer> <leader>e <esc>:w<CR>:8split term://python3 %<CR>
