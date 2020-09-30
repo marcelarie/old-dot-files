@@ -27,6 +27,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'valloric/youcompleteme'
+Plug 'KabbAmine/vCoolor.vim'
 Plug 'turbio/bracey.vim'
 Plug 'theprimeagen/vim-be-good'
 Plug 'leafgarland/typescript-vim'
