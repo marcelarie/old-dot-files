@@ -16,6 +16,7 @@ set undofile
 set incsearch
 set scrolloff=8
 set noshowcmd 
+set nohlsearch
 set noruler
 set splitbelow
 set splitright
@@ -25,6 +26,7 @@ Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'valloric/youcompleteme'
+Plug 'turbio/bracey.vim'
 Plug 'theprimeagen/vim-be-good'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-airline/vim-airline'
@@ -37,11 +39,11 @@ colorscheme gruvbox
 set background=dark
 
 "let g:airline_theme='wombat'
-
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 let g:typescript_indent_disable = 1
+
 
 " Leader Key
 let mapleader = " "
@@ -53,7 +55,8 @@ map <leader>W :w!<cr>
 map <leader>q :q<cr>
 " Quits vim with force.
 map <leader>Q :q!<cr>
-
+" Split screen and resize 35
+nnoremap <leader>r :wincmd v<bar> :Ex <bar> :vertical resize 35<CR>
 " AutoRun python files (SPACE+e) 
 " Runs the code.
 autocmd FileType python map <buffer> <leader>e <esc>:w<CR>:8split term://python3 %<CR>

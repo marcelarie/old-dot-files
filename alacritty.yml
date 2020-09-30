@@ -10,7 +10,7 @@ font:
                 family: FiraCode
         italic:
                 family: FiraCode
-        size: 14
+        size: 16
 
 
 # Colors (Gruvbox dark)
