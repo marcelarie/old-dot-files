@@ -69,6 +69,7 @@
     nmap <leader>gh :diffget //3<CR>
     nmap <leader>gl :diffget //2<CR>
     nmap <leader>c :Gcommit<CR> 
+    nmap <leader>p :Gpush<CR> 
     nnoremap <C-p> :GFiles<CR>
     " AutoRun python files (SPACE+e) 
     " Runs the code.
