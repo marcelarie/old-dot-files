@@ -25,7 +25,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
+Plug 'alvan/vim-closetag'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 " Plug 'valloric/youcompleteme'
 Plug 'KabbAmine/vCoolor.vim'
 Plug 'turbio/bracey.vim'
@@ -45,7 +48,6 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let g:typescript_indent_disable = 1
 
-
 " Leader Key
 let mapleader = " "
 " Saves the file.
@@ -59,20 +61,40 @@ map <leader>Q :q!<cr>
 " Split screen and resize 35
 nnoremap <leader>r :wincmd v<bar> :Ex <bar> :vertical resize 35<CR>
 " Fugitive keybidings
-nmap <leader>gs :G<CR>
+nmap <leader>g :G<CR>
 nmap <leader>gh :diffget //3<CR>
 nmap <leader>gl :diffget //2<CR>
+nmap <leader>c :Gcommit<CR> 
 " AutoRun python files (SPACE+e) 
 " Runs the code.
 autocmd FileType python map <buffer> <leader>e <esc>:w<CR>:8split term://python3 %<CR>
 " Runs the code but clears the terminal before.
 autocmd FileType python map <buffer> <leader>E <esc>:w<esc>:!clear<CR>:8split term://python shellescape(@%, 1)<CR>
 
+"Coc-Vim KB
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
+nnoremap <C-p> :GFiles<CR>
+
 " Remove newbie crutches in Command Mode
- cnoremap <Down> <Nop>
- cnoremap <Left> <Nop>
- cnoremap <Right> <Nop>
- cnoremap <Up> <Nop>
+" cnoremap <Down> <Nop>
+" cnoremap <Left> <Nop>
+" cnoremap <Right> <Nop>
+" cnoremap <Up> <Nop>
 
  " Remove newbie crutches in Insert Mode
 " inoremap <Down> <Nop>
