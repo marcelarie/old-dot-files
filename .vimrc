@@ -89,6 +89,9 @@
           \ coc#refresh()
     inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
+    " <CR>: confirm completion, or insert <CR>
+    inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+
     function! s:check_back_space() abort
       let col = col('.') - 1
       return !col || getline('.')[col - 1]  =~# '\s'
