@@ -21,6 +21,7 @@
     set splitbelow
     set splitright
     set timeoutlen=500
+    set spelllang=en
 
 " Plug
     call plug#begin('~/.vim/plugged')
@@ -32,6 +33,7 @@
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     " Plug 'valloric/youcompleteme'
+    Plug 'mattn/emmet-vim'
     Plug 'KabbAmine/vCoolor.vim'
     Plug 'turbio/bracey.vim'
     Plug 'theprimeagen/vim-be-good'
