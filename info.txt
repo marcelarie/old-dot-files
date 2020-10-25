@@ -1,0 +1,2 @@
+Unclutter hides your X mouse cursor when you do not need it, to prevent it from getting in the way. 
+pacman -S unclutter // to run unclutter & on the terminal

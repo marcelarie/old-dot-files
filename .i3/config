@@ -11,7 +11,7 @@ bindsym $mod+Shift+End exec i3-sensible-terminal -e scrot -s
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 1
+default_border none
 default_floating_border normal
 
 # Hide borders
