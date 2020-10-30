@@ -32,7 +32,10 @@
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    " Plug 'roman/golden-ratio'
+    Plug 'justincampbell/vim-eighties'
     " Plug 'valloric/youcompleteme'
+    " Plug 'othree/html5.vim'
     Plug 'mattn/emmet-vim'
     Plug 'KabbAmine/vCoolor.vim'
     Plug 'turbio/bracey.vim'
@@ -49,10 +52,12 @@
     set background=dark
     "let g:airline_theme='wombat'
 
-"NERDTree
+" NERDTree
     map <C-n> :NERDTreeToggle<CR>
     let NERDTreeShowHidden=1
     let g:typescript_indent_disable = 1
+" Auto Resize Windows
+    let g:eighties_minimum_width = 125
 
 " Leader Keybindings
     let mapleader = " "
