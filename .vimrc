@@ -69,6 +69,9 @@
     map <leader>q :q<cr>
     " Quits vim with force.
     map <leader>Q :q!<cr>
+    " Changes windows
+    nnoremap <leader>l :wincmd l<CR>
+    nnoremap <leader>h :wincmd h<CR>
     " Split screen and resize 35
     nnoremap <leader>r :wincmd v<bar> :Ex <bar> :vertical resize 35<CR>
     " Fugitive Keybindings
