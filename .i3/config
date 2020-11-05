@@ -41,15 +41,24 @@ bindsym $mod+d exec --no-startup-id dmenu_recency
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 
+###############
+## Autostart ##
+###############
+
+# bluetooth menu 
+exec --no-startup-id bluetooth
+# hide cursour
+exec --no-startup-id unclutter
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
 
-#exec --no-startup-id volumeicon
+# exec --no-startup-id volumeicon
 bindsym $mod+Ctrl+a exec i3-sensible-terminal -e 'alsamixer'
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id pa-applet
 bindsym $mod+Ctrl+m exec pavucontrol
+
 
 ################################################################################################
 
@@ -282,7 +291,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
-# exec --no-startup-id blueman-applet
+exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_solarized
 #exec --no-startup-id start_conky_green
