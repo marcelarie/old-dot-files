@@ -36,6 +36,7 @@
     " Plug 'justincampbell/vim-eighties'
     " Plug 'valloric/youcompleteme'
     " Plug 'othree/html5.vim'
+    Plug 'christoomey/vim-system-copy'
     Plug 'mattn/emmet-vim'
     Plug 'KabbAmine/vCoolor.vim'
     Plug 'turbio/bracey.vim'
@@ -83,9 +84,14 @@
     nnoremap <C-p> :GFiles<CR>
     " AutoRun python files (SPACE+e) 
     " Runs the code.
-    autocmd FileType python map <buffer> <leader>e <esc>:w<CR>:8split term://python3 %<CR>
+    " FOR PYTHON
+    " autocmd FileType python map <buffer> <leader>e <esc>:w<CR>:8split term://python3 %<CR>
     " Runs the code but clears the terminal before.
-    autocmd FileType python map <buffer> <leader>E <esc>:w<esc>:!clear<CR>:8split term://python shellescape(@%, 1)<CR>
+     "autocmd FileType python map <buffer> <leader>E <esc>:w<esc>:!clear<CR>:8split term://python shellescape(@%, 1)<CR>
+    " FOR JS
+    autocmd FileType javascript map <buffer> <leader>e <esc>:w<CR>:8split term://node %<CR>
+    " Runs just selected code
+    autocmd FileType javascript map <buffer> <leader>c <esc>:w<CR>:8split '<,'>term://node %<CR>
     " Coc-Def/Ref
     nmap <leader>gd <Plug>(coc-definition)
     nmap <leader>gr <Plug>(coc-references)
