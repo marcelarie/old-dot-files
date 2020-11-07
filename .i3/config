@@ -49,6 +49,8 @@ bindsym $mod+z exec --no-startup-id morc_menu
 exec --no-startup-id bluetooth
 # hide cursour
 exec --no-startup-id unclutter
+# disable remaps
+exec --no-startup-id setxkbmap
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################

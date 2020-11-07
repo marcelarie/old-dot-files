@@ -2,9 +2,14 @@
     syntax on
     set relativenumber
     set noerrorbells
+    " 4 tabs
     set tabstop=4 softtabstop=4
     set shiftwidth=4
+    "2 tabs
+    " set tabstop=2
+    " set softtabstop=2
     set expandtab
+    set shiftwidth=4
     set smartindent
     set nu
     set nowrap
@@ -22,6 +27,10 @@
     set splitright
     set timeoutlen=500
     set spelllang=en
+    " Vim Wiki must settings
+    set nocompatible
+    filetype plugin on
+    
 
 " Plug
     call plug#begin('~/.vim/plugged')
@@ -46,6 +55,7 @@
     Plug 'vim-airline/vim-airline-themes'
     Plug 'lilydjwg/colorizer'
     Plug 'flazz/vim-colorschemes'
+    Plug 'vimwiki/vimwiki'
     call plug#end()
 
 " Colorscheme
