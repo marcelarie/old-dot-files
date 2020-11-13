@@ -24,6 +24,8 @@ SAVEHIST=500
 #export VISUAL=/usr/bin/nano
 WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
 
+### SETS VI MODE ###
+bindkey -v
 
 ## Keybindings section
 bindkey -e
@@ -54,6 +56,8 @@ bindkey '^[[Z' undo                                             # Shift+tab undo
 
 ## Alias section 
 alias cp="cp -i"                                                # Confirm before overwriting something
+alias mv='mv -i'                                                # Confirm before overwriting something
+alias rm='rm -i'                                                # Confirm before overwriting something
 alias df='df -h'                                                # Human-readable sizes
 alias free='free -m'                                            # Show sizes in MB
 alias gitu='git add . && git commit && git push'
@@ -66,6 +70,9 @@ alias pacr='sudo pacman -Rns'
 alias pyyu='sudo pacman -Syyu'
 alias pacu='sudo pacman -Su'
 alias ubuntu-sshs='ssh ubuntu@54.38.188.31'
+alias ..= 'cd ..'
+alias ...= 'cd ../..'
+alias ...= 'cd ../../..'
 
 # Theming section  
 autoload -U compinit colors zcalc
