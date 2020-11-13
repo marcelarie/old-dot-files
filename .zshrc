@@ -68,9 +68,9 @@ alias pacr='sudo pacman -Rns'
 alias pyyu='sudo pacman -Syyu'
 alias pacu='sudo pacman -Su'
 alias ubuntu-sshs='ssh ubuntu@54.38.188.31'
-alias ..= 'cd ..'
-alias ...= 'cd ../..'
-alias ...= 'cd ../../..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ...='cd ../../..'
 
 # Theming section  
 autoload -U compinit colors zcalc
