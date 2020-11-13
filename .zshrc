@@ -24,8 +24,6 @@ SAVEHIST=500
 #export VISUAL=/usr/bin/nano
 WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
 
-### SETS VI MODE ###
-bindkey -v
 
 ## Keybindings section
 bindkey -e
@@ -210,3 +208,5 @@ case $(basename "$(cat "/proc/$PPID/comm")") in
   		ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
     ;;
 esac
+### SETS VI MODE ###
+bindkey -v
