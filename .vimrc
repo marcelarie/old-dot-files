@@ -10,7 +10,8 @@
     " set softtabstop=2
     set expandtab
     set shiftwidth=4
-    set smartindent set nu
+    set smartindent 
+    set nu
     set nowrap
     set smartcase
     set noswapfile
