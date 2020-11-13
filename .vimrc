@@ -1,6 +1,6 @@
 " Settings
     syntax on
-    set relativenumber
+    set relativenumber 
     set noerrorbells
     " 4 tabs
     set tabstop=4 softtabstop=4
@@ -10,8 +10,7 @@
     " set softtabstop=2
     set expandtab
     set shiftwidth=4
-    set smartindent
-    set nu
+    set smartindent set nu
     set nowrap
     set smartcase
     set noswapfile
@@ -55,7 +54,10 @@
     Plug 'vim-airline/vim-airline-themes'
     Plug 'lilydjwg/colorizer'
     Plug 'flazz/vim-colorschemes'
-    Plug 'vimwiki/vimwiki'
+    " Plug 'puremourning/vimspector'
+    Plug 'szw/vim-maximizer'
+
+    " Plug 'vimwiki/vimwiki'
     call plug#end()
 
 " Colorscheme
@@ -83,6 +85,8 @@
     " Changes windows
     nnoremap <leader>l :wincmd l<CR>
     nnoremap <leader>h :wincmd h<CR>
+    nnoremap <leader>j :wincmd j<CR>
+    nnoremap <leader>k :wincmd k<CR>
     " Split screen and resize 35
     nnoremap <leader>r :wincmd v<bar> :Ex <bar> :vertical resize 35<CR>
     " Fugitive Keybindings
@@ -92,6 +96,8 @@
     nmap <leader>c :Gcommit<CR> 
     nmap <leader>p :Gpush<CR> 
     nnoremap <C-p> :GFiles<CR>
+    " Maximizer
+    nnoremap <leader>m :MaximizerToggle!<CR>
     " AutoRun python files (SPACE+e) 
     " Runs the code.
     " FOR PYTHON
