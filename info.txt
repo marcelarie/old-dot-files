@@ -17,3 +17,4 @@ local_start() {
 
 Fast reconnect bluetooth
 For faster reconnect need to set "FastConnectable" to true in /etc/bluetooth/main.conf
+/
