@@ -48,7 +48,6 @@
     Plug 'christoomey/vim-system-copy'
     Plug 'mattn/emmet-vim'
     Plug 'KabbAmine/vCoolor.vim'
-    Plug 'turbio/bracey.vim'
     Plug 'theprimeagen/vim-be-good'
     Plug 'leafgarland/typescript-vim'
     Plug 'vim-airline/vim-airline'
