@@ -58,7 +58,7 @@ alias mv='mv -i'                                                # Confirm before
 alias rm='rm -i'                                                # Confirm before overwriting something
 alias df='df -h'                                                # Human-readable sizes
 alias free='free -m'                                            # Show sizes in MB
-alias ls='ls --color=auto'
+alias ls='exa'
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
