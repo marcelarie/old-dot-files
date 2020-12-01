@@ -58,7 +58,6 @@ alias mv='mv -i'                                                # Confirm before
 alias rm='rm -i'                                                # Confirm before overwriting something
 alias df='df -h'                                                # Human-readable sizes
 alias free='free -m'                                            # Show sizes in MB
-alias gitu='git add . && git commit && git push'
 alias ls='ls --color=auto'
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
@@ -71,6 +70,7 @@ alias ubuntu-sshs='ssh ubuntu@54.38.188.31'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ...='cd ../../..'
+alias gomain='git checkout main'
 
 # Theming section  
 autoload -U compinit colors zcalc
