@@ -8,7 +8,8 @@ local_start() {
 	# This is a good place to load any misc programs
 	# on startup (use &>/dev/null to hide output)
 
-	echo "2" > /sys/module/hid_apple/parameters/fnmode
+    echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode
+
 
 	# We should always return 0
 	return 0
@@ -16,3 +17,4 @@ local_start() {
 
 Fast reconnect bluetooth
 For faster reconnect need to set "FastConnectable" to true in /etc/bluetooth/main.conf
+/
