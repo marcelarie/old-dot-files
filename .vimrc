@@ -38,32 +38,44 @@
     Plug 'scrooloose/nerdtree'
     Plug 'tpope/vim-fugitive'
     Plug 'alvan/vim-closetag'
+    " install coc-prettier to try 
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'roman/golden-ratio'
-    " Plug 'justincampbell/vim-eighties'
-    " Plug 'valloric/youcompleteme'
-    " Plug 'othree/html5.vim'
     Plug 'christoomey/vim-system-copy'
     Plug 'mattn/emmet-vim'
     Plug 'KabbAmine/vCoolor.vim'
     Plug 'theprimeagen/vim-be-good'
-    Plug 'leafgarland/typescript-vim'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'lilydjwg/colorizer'
     Plug 'flazz/vim-colorschemes'
-    " Plug 'puremourning/vimspector'
+    Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(2) } }
     Plug 'szw/vim-maximizer'
+    " Still testing
+    Plug 'hail2u/vim-css3-syntax'
+    Plug 'jiangmiao/auto-pairs'
 
+    
+    " Forgotten:
     " Plug 'vimwiki/vimwiki'
+    " Plug 'justincampbell/vim-eighties'
+    " Plug 'valloric/youcompleteme'
+    " Plug 'othree/html5.vim'
+    " Plug 'puremourning/vimspector'
+    " Plug 'sheerun/vim-polyglot'
+    " Plug 'leafgarland/typescript-vim'
     call plug#end()
 
 " Colorscheme
     colorscheme gruvbox
     set background=dark
     "let g:airline_theme='wombat'
+" FireNvim 
+    au BufEnter github.com_*.txt set filetype=markdown
+"    let fc = g:firenvim_config['localSettings']
+"    let fc['https?://twitter.com/'] = { 'takeover': 'never', 'priority': 1 }
 
 " NERDTree
     map <C-n> :NERDTreeToggle<CR>
