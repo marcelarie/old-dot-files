@@ -56,6 +56,7 @@
     " Still testing
     Plug 'hail2u/vim-css3-syntax'
     Plug 'jiangmiao/auto-pairs'
+    Plug 'metakirby5/codi.vim'
 
     
     " Forgotten:
@@ -110,6 +111,9 @@
     nnoremap <C-p> :GFiles<CR>
     " Maximizer
     nnoremap <leader>m :MaximizerToggle!<CR>
+    " Codi 
+    nnoremap <leader>= :Codi<CR>
+    nnoremap <leader>- :Codi!<CR>
     " AutoRun python files (SPACE+e) 
     " Runs the code.
     " FOR PYTHON
