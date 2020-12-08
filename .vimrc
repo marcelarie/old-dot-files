@@ -42,7 +42,7 @@
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    Plug 'roman/golden-ratio'
+    Plug 'stsewd/fzf-checkout.vim'
     Plug 'christoomey/vim-system-copy'
     Plug 'mattn/emmet-vim'
     Plug 'KabbAmine/vCoolor.vim'
@@ -57,7 +57,7 @@
     Plug 'hail2u/vim-css3-syntax'
     Plug 'jiangmiao/auto-pairs'
     Plug 'metakirby5/codi.vim'
-
+    Plug 'jfonseca8/vim-bujo'
     
     " Forgotten:
     " Plug 'vimwiki/vimwiki'
@@ -67,6 +67,7 @@
     " Plug 'puremourning/vimspector'
     " Plug 'sheerun/vim-polyglot'
     " Plug 'leafgarland/typescript-vim'
+    " Plug 'roman/golden-ratio'
     call plug#end()
 
 " Colorscheme
@@ -108,12 +109,17 @@
     nmap <leader>gl :diffget //2<CR>
     nmap <leader>c :Gcommit<CR> 
     nmap <leader>p :Gpush<CR> 
+    nmap <leader>b :GBranches<CR> 
+    nmap <leader>r :Rg<CR> 
     nnoremap <C-p> :GFiles<CR>
     " Maximizer
     nnoremap <leader>m :MaximizerToggle!<CR>
     " Codi 
     nnoremap <leader>= :Codi<CR>
     nnoremap <leader>- :Codi!<CR>
+    " vim TODO
+    nmap <Leader>t <Plug>BujoAddnormal
+    nmap <Leader>x <Plug>BujoChecknormal
     " AutoRun python files (SPACE+e) 
     " Runs the code.
     " FOR PYTHON
@@ -145,6 +151,9 @@
       return !col || getline('.')[col - 1]  =~# '\s'
     endfunction
 
+" FZF
+    let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+    let $FZF_DEFAULT_OPTS='--reverse'    
 
 " Remove newbie crutches in Command Mode
 " cnoremap <Down> <Nop>
