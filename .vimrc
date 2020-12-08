@@ -110,7 +110,7 @@
     nmap <leader>c :Gcommit<CR> 
     nmap <leader>p :Gpush<CR> 
     nmap <leader>b :GBranches<CR> 
-    nmap <leader>r :Rg<CR> 
+    nmap <leader>re :Rg<CR> 
     nnoremap <C-p> :GFiles<CR>
     " Maximizer
     nnoremap <leader>m :MaximizerToggle!<CR>
