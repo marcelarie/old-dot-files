@@ -118,6 +118,7 @@
     nnoremap <leader>= :Codi<CR>
     nnoremap <leader>- :Codi!<CR>
     " vim TODO
+    nnoremap <leader>T :Todo<CR>
     nmap <Leader>t <Plug>BujoAddnormal
     nmap <Leader>x <Plug>BujoChecknormal
     " AutoRun python files (SPACE+e) 
