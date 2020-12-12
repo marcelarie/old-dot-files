@@ -1,0 +1,4 @@
+PLUGINS
+k
+zsh-autosuggestions  
+zsh-syntax-highlighting
