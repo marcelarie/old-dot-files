@@ -116,6 +116,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ...='cd ../../..'
 alias gomain='git checkout main'
+alias cat='bat'
+alias gb='git checkout $(git branch | fzf)'
 
 # pfetch on start
 pfetch

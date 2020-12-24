@@ -2,13 +2,11 @@
     syntax on
     set relativenumber 
     set noerrorbells
-    " 4 tabs
-    set tabstop=4 softtabstop=4
-    set shiftwidth=4
-    "2 tabs
-    " set tabstop=2
-    " set softtabstop=2
+    " TABS
     set expandtab
+    set smarttab
+    set hidden
+    set tabstop=4 softtabstop=4
     set shiftwidth=4
     set smartindent 
     set nu
@@ -27,10 +25,17 @@
     set splitright
     set timeoutlen=500
     set spelllang=en
+    set updatetime=300
+    set signcolumn=yes
     " Vim Wiki must settings
     set nocompatible
     filetype plugin on
     
+    " set cmdheight=2
+    "2 tabs
+    " set tabstop=2
+    " set softtabstop=2
+    " set shiftwidth=4
 
 " Plug
     call plug#begin('~/.vim/plugged')
@@ -38,7 +43,6 @@
     Plug 'scrooloose/nerdtree'
     Plug 'tpope/vim-fugitive'
     Plug 'alvan/vim-closetag'
-    " install coc-prettier to try 
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
@@ -58,6 +62,8 @@
     Plug 'jiangmiao/auto-pairs'
     Plug 'metakirby5/codi.vim'
     Plug 'jfonseca8/vim-bujo'
+    Plug 'scrooloose/nerdcommenter'
+
     
     " Forgotten:
     " Plug 'vimwiki/vimwiki'
@@ -80,9 +86,12 @@
 "    let fc['https?://twitter.com/'] = { 'takeover': 'never', 'priority': 1 }
 
 " NERDTree
-    map <C-n> :NERDTreeToggle<CR>
+    " map <C-n> :NERDTreeToggle<CR>
     let NERDTreeShowHidden=1
     let g:typescript_indent_disable = 1
+" Coc-Explorer
+    :nmap <space>e :CocCommand explorer<CR>
+"
 " Auto Resize Windows
 "    let g:eighties_minimum_width = 125
 
@@ -111,6 +120,7 @@
     nmap <leader>p :Gpush<CR> 
     nmap <leader>b :GBranches<CR> 
     nmap <leader>re :Rg<CR> 
+    nmap <leader>f :Buffers<CR> 
     nnoremap <C-p> :GFiles<CR>
     " Maximizer
     nnoremap <leader>m :MaximizerToggle!<CR>
@@ -121,6 +131,9 @@
     nnoremap <leader>T :Todo<CR>
     nmap <Leader>t <Plug>BujoAddnormal
     nmap <Leader>x <Plug>BujoChecknormal
+
+    imap <C-l> <Plug>(coc-snippets-expand)
+
     " AutoRun python files (SPACE+e) 
     " Runs the code.
     " FOR PYTHON
@@ -128,12 +141,26 @@
     " Runs the code but clears the terminal before.
      "autocmd FileType python map <buffer> <leader>E <esc>:w<esc>:!clear<CR>:8split term://python shellescape(@%, 1)<CR>
     " FOR JS
-    autocmd FileType javascript map <buffer> <leader>e <esc>:w<CR>:8split term://node %<CR>
+    autocmd FileType javascript map <buffer> <leader>c <esc>:w<CR>:8split term://node %<CR>
     " Runs just selected code
-    autocmd FileType javascript map <buffer> <leader>c <esc>:w<CR>:8split '<,'>term://node %<CR>
-    " Coc-Def/Ref
+    " autocmd FileType javascript map <buffer> <leader>c <esc>:w<CR>:8split '<,'>term://node %<CR>
+
+" Coc-auto install
+let g:coc_global_extensions = [
+    \ 'coc-tsserver',
+    \ 'coc-vimlsp',
+    \ 'coc-eslint',
+    \ 'coc-css',
+    \ 'coc-explorer',
+    \ 'coc-html',
+    \ 'coc-json',
+    \ 'coc-python',
+    \]
+
+" Coc-Def/Ref
     nmap <leader>gd <Plug>(coc-definition)
     nmap <leader>gr <Plug>(coc-references)
+
 "Coc-Vim KB
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -156,19 +183,20 @@
     let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
     let $FZF_DEFAULT_OPTS='--reverse'    
 
-" Remove newbie crutches in Command Mode
-" cnoremap <Down> <Nop>
-" cnoremap <Left> <Nop>
-" cnoremap <Right> <Nop>
-" cnoremap <Up> <Nop>
+" Auto Pairs
+    let g:AutoPairsFlyMode = 1
+    au FileType html let b:AutoPairs = AutoPairsDefine({'<!--' : '-->'})
+    au FileType css  let b:AutoPairs = AutoPairsDefine({'/*' : '*/'})
+    au FileType javascript let b:AutoPairs = AutoPairsDefine({'/*' : '*/'})
+" Nerd Commenter
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 2
 
- " Remove newbie crutches in Insert Mode
-" inoremap <Down> <Nop>
-" inoremap <Left> <Nop>
-" inoremap <Right> <Nop>
-" inoremap <Up> <Nop>
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
 
- " Remove newbie crutches in Normal Mode
+
+" Remove newbie crutches in Normal Mode
  nnoremap <Down> <Nop>
  nnoremap <Left> <Nop>
  nnoremap <Right> <Nop>
@@ -179,6 +207,12 @@
  vnoremap <Left> <Nop>
  vnoremap <Right> <Nop>
  vnoremap <Up> <Nop>
+
+
+" AUTOCOMMANDS
+" augroup coc-explorer
+" au VimEnter * :if bufname()=='' | call execute('CocCommand explorer') | endif
+" augroup END
 
 " BONUS INFO
     " with the youcompletme pluggin there always the [ID] to show what its a variable, i change it to [V] 
