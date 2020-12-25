@@ -118,6 +118,8 @@ alias ...='cd ../../..'
 alias gomain='git checkout main'
 alias cat='bat'
 alias gb='git checkout $(git branch | fzf)'
+alias rc='nvim ~/.vimrc'
+alias clones='cd ~/clones'
 
 # pfetch on start
 pfetch

@@ -63,6 +63,10 @@
     Plug 'metakirby5/codi.vim'
     Plug 'jfonseca8/vim-bujo'
     Plug 'scrooloose/nerdcommenter'
+    Plug 'lervag/vimtex'
+    Plug 'dbeniamine/cheat.sh-vim'
+
+
 
     
     " Forgotten:
@@ -149,7 +153,6 @@
 let g:coc_global_extensions = [
     \ 'coc-tsserver',
     \ 'coc-vimlsp',
-    \ 'coc-eslint',
     \ 'coc-css',
     \ 'coc-explorer',
     \ 'coc-html',
@@ -194,6 +197,10 @@ let g:NERDSpaceDelims = 2
 
 " Use compact syntax for prettified multi-line comments
 let g:NERDCompactSexyComs = 1
+
+" LaTeX
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_progname = 'latexmk'
 
 
 " Remove newbie crutches in Normal Mode
