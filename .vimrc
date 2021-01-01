@@ -145,7 +145,7 @@
     " Runs the code but clears the terminal before.
      "autocmd FileType python map <buffer> <leader>E <esc>:w<esc>:!clear<CR>:8split term://python shellescape(@%, 1)<CR>
     " FOR JS
-    autocmd FileType javascript map <buffer> <leader>c <esc>:w<CR>:8split term://node %<CR>
+    autocmd FileType javascript map <buffer> <leader>we <esc>:w<CR>:8split term://node %<CR>
     " Runs just selected code
     " autocmd FileType javascript map <buffer> <leader>c <esc>:w<CR>:8split '<,'>term://node %<CR>
 
