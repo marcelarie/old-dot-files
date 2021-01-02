@@ -120,9 +120,9 @@
     nmap <leader>g :G<CR>
     nmap <leader>gh :diffget //3<CR>
     nmap <leader>gl :diffget //2<CR>
-    nmap <leader>c :Gcommit<CR> 
-    nmap <leader>p :Gpush<CR> 
-    nmap <leader>b :GBranches<CR> 
+    nmap <leader>gc :Gcommit<CR> 
+    nmap <leader>gp :Gpush<CR> 
+    nmap <leader>gb :GBranches<CR> 
     nmap <leader>re :Rg<CR> 
     nmap <leader>f :Buffers<CR> 
     nnoremap <C-p> :GFiles<CR>
@@ -136,7 +136,8 @@
     nmap <Leader>t <Plug>BujoAddnormal
     nmap <Leader>x <Plug>BujoChecknormal
 
-    imap <C-l> <Plug>(coc-snippets-expand)
+    "NERDCommenter
+    nnoremap <leader>vc :VCoolor<CR>
 
     " AutoRun python files (SPACE+e) 
     " Runs the code.
