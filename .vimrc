@@ -118,7 +118,18 @@
     nnoremap <leader>h :wincmd h<CR>
     nnoremap <leader>j :wincmd j<CR>
     nnoremap <leader>k :wincmd k<CR>
-    " Split screen and resize 35
+    " Go to tab by number
+    noremap <leader>1 1gt
+    noremap <leader>2 2gt
+    noremap <leader>3 3gt
+    noremap <leader>4 4gt
+    noremap <leader>5 5gt
+    noremap <leader>6 6gt
+    noremap <leader>7 7gt
+    noremap <leader>8 8gt
+    noremap <leader>9 9gt
+    noremap <leader>0 :tablast<cr>
+    " Split screen and resize 55
     nnoremap <leader>r :wincmd v<bar> :Ex <bar> :vertical resize 55<CR>
     " Fugitive Keybindings
     nmap <leader>g :G<CR>
