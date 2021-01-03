@@ -60,7 +60,6 @@
     " Still testing
     Plug 'hail2u/vim-css3-syntax'
     Plug 'jiangmiao/auto-pairs'
-    Plug 'metakirby5/codi.vim'
     Plug 'jfonseca8/vim-bujo'
     Plug 'scrooloose/nerdcommenter'
     Plug 'lervag/vimtex'
@@ -120,17 +119,14 @@
     nmap <leader>g :G<CR>
     nmap <leader>gh :diffget //3<CR>
     nmap <leader>gl :diffget //2<CR>
-    nmap <leader>gc :Gcommit<CR> 
-    nmap <leader>gp :Gpush<CR> 
+    autocmd Filetype fugitive nmap <leader>c :Gcommit<CR> 
+    autocmd Filetype fugitive nmap <leader>p :Gpush<bar> :q<CR> 
     nmap <leader>gb :GBranches<CR> 
     nmap <leader>re :Rg<CR> 
     nmap <leader>f :Buffers<CR> 
     nnoremap <C-p> :GFiles<CR>
     " Maximizer
     nnoremap <leader>m :MaximizerToggle!<CR>
-    " Codi 
-    nnoremap <leader>= :Codi<CR>
-    nnoremap <leader>- :Codi!<CR>
     " vim TODO
     nnoremap <leader>T :Todo<CR>
     nmap <Leader>t <Plug>BujoAddnormal
