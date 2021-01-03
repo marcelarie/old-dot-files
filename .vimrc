@@ -100,6 +100,11 @@
 
 " Leader Keybindings
     let mapleader = " "
+    " Open tab
+    map <leader>t :tabnew<cr>
+    " Split screen
+    map <leader>s :split<cr>
+    map <leader>vs :vsplit<cr>
     " Saves the file.
     map <leader>w :w<cr>
     " Saves the file with force.
