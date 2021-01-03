@@ -115,7 +115,7 @@
     nnoremap <leader>j :wincmd j<CR>
     nnoremap <leader>k :wincmd k<CR>
     " Split screen and resize 35
-    nnoremap <leader>r :wincmd v<bar> :Ex <bar> :vertical resize 35<CR>
+    nnoremap <leader>r :wincmd v<bar> :Ex <bar> :vertical resize 55<CR>
     " Fugitive Keybindings
     nmap <leader>g :G<CR>
     nmap <leader>gh :diffget //3<CR>
