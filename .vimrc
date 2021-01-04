@@ -135,7 +135,7 @@
     nmap <leader>g :G<CR>
     nmap <leader>gh :diffget //3<CR>
     nmap <leader>gl :diffget //2<CR>
-    autocmd Filetype fugitive nmap <leader>c :Gcommit<CR> 
+    nmap <leader>c :Gcommit<CR> 
     autocmd Filetype fugitive nmap <leader>p :Gpush<bar> :q<CR> 
     nmap <leader>gb :GBranches<CR> 
     nmap <leader>re :Rg<CR> 
@@ -150,6 +150,10 @@
 
     "NERDCommenter
     nnoremap <leader>vc :VCoolor<CR>
+
+    "ABBREVIATIONS
+    ab clog console.log(
+
 
     " AutoRun python files (SPACE+e) 
     " Runs the code.
