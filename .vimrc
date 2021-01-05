@@ -8,6 +8,7 @@
     set hidden
     set tabstop=4 softtabstop=4
     set shiftwidth=4
+
     set smartindent 
     set nu
     set nowrap
@@ -40,9 +41,9 @@
 " Plug
     call plug#begin('~/.vim/plugged')
     Plug 'morhetz/gruvbox'
+    Plug 'mhartington/oceanic-next'
     Plug 'scrooloose/nerdtree'
     Plug 'tpope/vim-fugitive'
-    Plug 'alvan/vim-closetag'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
@@ -51,24 +52,24 @@
     Plug 'mattn/emmet-vim'
     Plug 'KabbAmine/vCoolor.vim'
     Plug 'theprimeagen/vim-be-good'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    Plug 'itchyny/lightline.vim'
+    "Plug 'vim-airline/vim-airline'
+    "Plug 'vim-airline/vim-airline-themes'
     Plug 'lilydjwg/colorizer'
     Plug 'flazz/vim-colorschemes'
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(2) } }
     Plug 'szw/vim-maximizer'
     " Still testing
-    Plug 'hail2u/vim-css3-syntax'
-    Plug 'jiangmiao/auto-pairs'
+    Plug 'raimondi/delimitmate'
     Plug 'jfonseca8/vim-bujo'
     Plug 'scrooloose/nerdcommenter'
     Plug 'lervag/vimtex'
     Plug 'dbeniamine/cheat.sh-vim'
-
-
+    Plug 'tweekmonster/startuptime.vim'
 
     
     " Forgotten:
+    " Plug 'lifepillar/vim-gruvbox8'
     " Plug 'vimwiki/vimwiki'
     " Plug 'justincampbell/vim-eighties'
     " Plug 'valloric/youcompleteme'
@@ -77,12 +78,33 @@
     " Plug 'sheerun/vim-polyglot'
     " Plug 'leafgarland/typescript-vim'
     " Plug 'roman/golden-ratio'
+    " Plug 'rstacruz/vim-closer'
+    " Plug 'hail2u/vim-css3-syntax'
+    " Plug 'alvan/vim-closetag'
+    " Plug 'jiangmiao/auto-pairs'
     call plug#end()
 
 " Colorscheme
     colorscheme gruvbox
     set background=dark
-    "let g:airline_theme='wombat'
+
+    " if (has("termguicolors"))
+        " set termguicolors
+    " endif
+    
+" LightLine
+let g:lightline = {
+      \ 'colorscheme': 'gruvbox',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
+
+
 " FireNvim 
     au BufEnter github.com_*.txt set filetype=markdown
 "    let fc = g:firenvim_config['localSettings']
@@ -152,7 +174,7 @@
     nnoremap <leader>vc :VCoolor<CR>
 
     "ABBREVIATIONS
-    ab clog console.log(
+    iabbrev log console.log(
 
 
     " AutoRun python files (SPACE+e) 
@@ -204,10 +226,11 @@ let g:coc_global_extensions = [
     let $FZF_DEFAULT_OPTS='--reverse'    
 
 " Auto Pairs
-    let g:AutoPairsFlyMode = 1
-    au FileType html let b:AutoPairs = AutoPairsDefine({'<!--' : '-->'})
-    au FileType css  let b:AutoPairs = AutoPairsDefine({'/*' : '*/'})
-    au FileType javascript let b:AutoPairs = AutoPairsDefine({'/*' : '*/'})
+    " let g:AutoPairsFlyMode = 1
+    " au FileType html let b:AutoPairs = AutoPairsDefine({'<!--' : '-->'})
+    " au FileType css  let b:AutoPairs = AutoPairsDefine({'/*' : '*/'})
+    " au FileType javascript let b:AutoPairs = AutoPairsDefine({'/*' : '*/'})
+
 " Nerd Commenter
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 2
