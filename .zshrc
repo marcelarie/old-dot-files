@@ -74,6 +74,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+
+export TERM=kitty
+export TERMINAL=kitty
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -93,6 +96,7 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
+#
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -119,7 +123,9 @@ alias gomain='git checkout main'
 alias cat='bat'
 alias gb='git checkout $(git branch | fzf)'
 alias rc='nvim ~/.vimrc'
+alias zrc='nvim ~/.zshrc'
 alias clones='cd ~/clones'
+alias vi='nvim'
 
 # pfetch on start
 pfetch

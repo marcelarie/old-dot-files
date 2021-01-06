@@ -60,7 +60,6 @@
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(2) } }
     Plug 'szw/vim-maximizer'
     " Still testing
-    Plug 'raimondi/delimitmate'
     Plug 'jfonseca8/vim-bujo'
     Plug 'scrooloose/nerdcommenter'
     Plug 'lervag/vimtex'
@@ -82,6 +81,7 @@
     " Plug 'hail2u/vim-css3-syntax'
     " Plug 'alvan/vim-closetag'
     " Plug 'jiangmiao/auto-pairs'
+    " Plug 'raimondi/delimitmate'
     call plug#end()
 
 " Colorscheme
@@ -202,6 +202,10 @@ let g:coc_global_extensions = [
 " Coc-Def/Ref
     nmap <leader>gd <Plug>(coc-definition)
     nmap <leader>gr <Plug>(coc-references)
+
+" Coc-on_enter
+	inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 "Coc-Vim KB
 " Use tab for trigger completion with characters ahead and navigate.

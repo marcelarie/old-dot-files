@@ -1,9 +1,24 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "javascript", "graphql", "html", "yaml",  "json", "python"],
-
-  // python config
-  "python.linting.enabled": true,
-  "python.linting.pylintEnabled": true,
-
-
+    "coc.preferences.formatOnSaveFiletypes": [
+        "css",
+        "markdown",
+        "javascript",
+        "graphql",
+        "html",
+        "yaml",
+        "json",
+        "python"
+    ],
+    "tsserver.formatOnType": true,
+    // python config
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    // Coc-Explorer
+    "explorer.width": 30,
+    "explorer.toggle": true,
+    "explorer.previewAction.onHover": false,
+    "explorer.icon.enableNerdfont": true,
+    "explorer.focus": true,
+    // Coc-pairs
+    "pairs.enableBackspace": true
 }
