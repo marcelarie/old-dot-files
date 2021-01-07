@@ -60,6 +60,7 @@
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(2) } }
     Plug 'szw/vim-maximizer'
     " Still testing
+    Plug 'jiangmiao/auto-pairs'
     Plug 'jfonseca8/vim-bujo'
     Plug 'scrooloose/nerdcommenter'
     Plug 'lervag/vimtex'
@@ -68,6 +69,7 @@
 
     
     " Forgotten:
+    " Plug 'raimondi/delimitmate'
     " Plug 'lifepillar/vim-gruvbox8'
     " Plug 'vimwiki/vimwiki'
     " Plug 'justincampbell/vim-eighties'
@@ -81,7 +83,6 @@
     " Plug 'hail2u/vim-css3-syntax'
     " Plug 'alvan/vim-closetag'
     " Plug 'jiangmiao/auto-pairs'
-    " Plug 'raimondi/delimitmate'
     call plug#end()
 
 " Colorscheme
@@ -171,6 +172,7 @@ let g:lightline = {
     nmap <Leader>x <Plug>BujoChecknormal
 
     "NERDCommenter
+    "VCoolor
     nnoremap <leader>vc :VCoolor<CR>
 
     "ABBREVIATIONS
@@ -203,10 +205,6 @@ let g:coc_global_extensions = [
     nmap <leader>gd <Plug>(coc-definition)
     nmap <leader>gr <Plug>(coc-references)
 
-" Coc-on_enter
-	inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
 "Coc-Vim KB
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -230,10 +228,11 @@ let g:coc_global_extensions = [
     let $FZF_DEFAULT_OPTS='--reverse'    
 
 " Auto Pairs
-    " let g:AutoPairsFlyMode = 1
-    " au FileType html let b:AutoPairs = AutoPairsDefine({'<!--' : '-->'})
-    " au FileType css  let b:AutoPairs = AutoPairsDefine({'/*' : '*/'})
-    " au FileType javascript let b:AutoPairs = AutoPairsDefine({'/*' : '*/'})
+     let g:AutoPairsFlyMode = 0
+     let g:AutoPairsMultilineClose = 0
+     au FileType html let b:AutoPairs = AutoPairsDefine({'<!--' : '-->'})
+     au FileType css  let b:AutoPairs = AutoPairsDefine({'/*' : '*/'})
+     au FileType javascript let b:AutoPairs = AutoPairsDefine({'/*' : '*/'})
 
 " Nerd Commenter
 " Add spaces after comment delimiters by default
@@ -246,6 +245,9 @@ let g:NERDCompactSexyComs = 1
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_compiler_progname = 'latexmk'
 
+" DelimitMate
+" let delimitMate_expand_cr = 1
+" let delimitMate_expand_space = 1
 
 " Remove newbie crutches in Normal Mode
  nnoremap <Down> <Nop>
