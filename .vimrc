@@ -66,7 +66,7 @@
     Plug 'lervag/vimtex'
     Plug 'dbeniamine/cheat.sh-vim'
     Plug 'tweekmonster/startuptime.vim'
-
+    Plug 'tpope/vim-surround'
     
     " Forgotten:
     " Plug 'raimondi/delimitmate'
@@ -174,6 +174,9 @@ let g:lightline = {
     "NERDCommenter
     "VCoolor
     nnoremap <leader>vc :VCoolor<CR>
+
+    " Surround.vim
+    nmap <leader>v :norm yssfconsole.log<CR> 
 
     "ABBREVIATIONS
     iabbrev log console.log(
