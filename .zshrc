@@ -126,6 +126,7 @@ alias rc='nvim ~/.vimrc'
 alias zrc='nvim ~/.zshrc'
 alias clones='cd ~/clones'
 alias vi='nvim'
+alias live-server='live-server --no-browser'
 
 # pfetch on start
 pfetch
