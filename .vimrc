@@ -1,44 +1,62 @@
-" Settings
+"SETTINGS:"
     syntax on
+    set foldmethod=indent
+    set spelllang=en
+    set nu
     set relativenumber 
     set noerrorbells
-    " TABS
+    " Insert space characters for tabs.
     set expandtab
     set smarttab
-    set hidden
+    set smartindent 
     set tabstop=4 softtabstop=4
     set shiftwidth=4
-
-    set smartindent 
-    set nu
+    " Opening a new file when the current 
+    " buffer has unsaved changes causes files 
+    " to be hidden instead of closed.
+    set hidden
+    " No wrapping on the lines if they pass the screen
+    " width.
     set nowrap
+    " Case sensitive search.
+    " :set nosmartcase
     set smartcase
+    " disable creating swap files entirely.
     set noswapfile
     set nobackup
+    " create a undodir for persisten undo 
+    " after vim closes.
     set undodir=~/.vim/undodir
     set undofile
+    " incremental search to move the 
+    " highlight as you add characters.
     set incsearch
+    " 8 lines on top/bottom of cursor.
     set scrolloff=8
     set noshowcmd 
     set nohlsearch
     set noruler
+    " invert screen splits.
     set splitbelow
     set splitright
+    " Vim will wait for 500 ms after each 
+    " keystroke for the mappings.
     set timeoutlen=500
-    set spelllang=en
+    " Vim waits 300 ms after you stop typing
+    " before it triggers the plugin.
     set updatetime=300
     set signcolumn=yes
-    " Vim Wiki must settings
+    " Turning off compatibility with old vi.
     set nocompatible
     filetype plugin on
-    
+    " Two spaces tabs
     " set cmdheight=2
     "2 tabs
     " set tabstop=2
     " set softtabstop=2
     " set shiftwidth=4
 
-" Plug
+"PLUG:"
     call plug#begin('~/.vim/plugged')
     Plug 'morhetz/gruvbox'
     Plug 'mhartington/oceanic-next'
@@ -53,8 +71,6 @@
     Plug 'KabbAmine/vCoolor.vim'
     Plug 'theprimeagen/vim-be-good'
     Plug 'itchyny/lightline.vim'
-    "Plug 'vim-airline/vim-airline'
-    "Plug 'vim-airline/vim-airline-themes'
     Plug 'lilydjwg/colorizer'
     Plug 'flazz/vim-colorschemes'
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(2) } }
@@ -83,18 +99,19 @@
     " Plug 'hail2u/vim-css3-syntax'
     " Plug 'alvan/vim-closetag'
     " Plug 'jiangmiao/auto-pairs'
+    " Plug 'vim-airline/vim-airline'
+    " Plug 'vim-airline/vim-airline-themes'
     call plug#end()
 
-" Colorscheme
+"COLORSCHEME:"
     colorscheme gruvbox
     set background=dark
-
     " if (has("termguicolors"))
         " set termguicolors
     " endif
     
-" LightLine
-let g:lightline = {
+"LIGHTLINE:"
+    let g:lightline = {
       \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
@@ -106,22 +123,21 @@ let g:lightline = {
       \ }
 
 
-" FireNvim 
+"FIRENVIM:"
     au BufEnter github.com_*.txt set filetype=markdown
-"    let fc = g:firenvim_config['localSettings']
-"    let fc['https?://twitter.com/'] = { 'takeover': 'never', 'priority': 1 }
+    " let fc = g:firenvim_config['localSettings']
+    " let fc['https?://twitter.com/'] = { 'takeover': 'never', 'priority': 1 }
 
-" NERDTree
+"NERDTREE:"
     " map <C-n> :NERDTreeToggle<CR>
     let NERDTreeShowHidden=1
     let g:typescript_indent_disable = 1
-" Coc-Explorer
-    :nmap <space>e :CocCommand explorer<CR>
-"
-" Auto Resize Windows
-"    let g:eighties_minimum_width = 125
 
-" Leader Keybindings
+
+"Auto Resize Windows:"
+    " let g:eighties_minimum_width = 125
+
+"Leader Keybindings:"
     let mapleader = " "
     " Open tab
     map <leader>t :tabnew<cr>
@@ -171,105 +187,110 @@ let g:lightline = {
     nmap <Leader>t <Plug>BujoAddnormal
     nmap <Leader>x <Plug>BujoChecknormal
 
-    "NERDCommenter
-    "VCoolor
+
+"VCoolor:"
     nnoremap <leader>vc :VCoolor<CR>
 
-    " Surround.vim
+"SurroundVim:"
     nmap <leader>v :norm yssfconsole.log<CR> 
 
-    "ABBREVIATIONS
-    iabbrev log console.log(
-
-
+"AutoRun:"
     " AutoRun python files (SPACE+e) 
     " Runs the code.
-    " FOR PYTHON
-    " autocmd FileType python map <buffer> <leader>e <esc>:w<CR>:8split term://python3 %<CR>
-    " Runs the code but clears the terminal before.
-     "autocmd FileType python map <buffer> <leader>E <esc>:w<esc>:!clear<CR>:8split term://python shellescape(@%, 1)<CR>
-    " FOR JS
-    autocmd FileType javascript map <buffer> <leader>we <esc>:w<CR>:8split term://node %<CR>
-    " Runs just selected code
-    " autocmd FileType javascript map <buffer> <leader>c <esc>:w<CR>:8split '<,'>term://node %<CR>
+    " FOR PYTHON:
+        " autocmd FileType python map <buffer> <leader>e <esc>:w<CR>:8split term://python3 %<CR>
+        " Runs the code but clears the terminal before.
+         "autocmd FileType python map <buffer> <leader>E <esc>:w<esc>:!clear<CR>:8split term://python shellescape(@%, 1)<CR>
+    " FOR JS:
+        autocmd FileType javascript map <buffer> <leader>we <esc>:w<CR>:8split term://node %<CR>
+        " Runs just selected code
+        " autocmd FileType javascript map <buffer> <leader>c <esc>:w<CR>:8split '<,'>term://node %<CR>
 
-" Coc-auto install
-let g:coc_global_extensions = [
-    \ 'coc-tsserver',
-    \ 'coc-vimlsp',
-    \ 'coc-css',
-    \ 'coc-explorer',
-    \ 'coc-html',
-    \ 'coc-json',
-    \ 'coc-python',
-    \]
+"COC SETTINGS:"
+    "COC EXPLORER:"
+        :nmap <space>e :CocCommand explorer<CR>
+    "CocAuto Install:"
+    let g:coc_global_extensions = [
+        \ 'coc-tsserver',
+        \ 'coc-vimlsp',
+        \ 'coc-css',
+        \ 'coc-explorer',
+        \ 'coc-html',
+        \ 'coc-json',
+        \ 'coc-python',
+        \]
+    "Coc Def Ref:"
+        nmap <leader>gd <Plug>(coc-definition)
+        nmap <leader>gr <Plug>(coc-references)
 
-" Coc-Def/Ref
-    nmap <leader>gd <Plug>(coc-definition)
-    nmap <leader>gr <Plug>(coc-references)
+    "CocVim KB:"
+    " Use tab for trigger completion with characters ahead and navigate.
+    " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+    " other plugin before putting this into your config.
+        inoremap <silent><expr> <TAB>
+              \ pumvisible() ? "\<C-n>" :
+              \ <SID>check_back_space() ? "\<TAB>" :
+              \ coc#refresh()
+        inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-"Coc-Vim KB
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-    inoremap <silent><expr> <TAB>
-          \ pumvisible() ? "\<C-n>" :
-          \ <SID>check_back_space() ? "\<TAB>" :
-          \ coc#refresh()
-    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+        " <CR>: confirm completion, or insert <CR>
+        inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 
-    " <CR>: confirm completion, or insert <CR>
-    inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+        function! s:check_back_space() abort
+          let col = col('.') - 1
+          return !col || getline('.')[col - 1]  =~# '\s'
+        endfunction
 
-    function! s:check_back_space() abort
-      let col = col('.') - 1
-      return !col || getline('.')[col - 1]  =~# '\s'
-    endfunction
-
-" FZF
+"FZF:"
     let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
     let $FZF_DEFAULT_OPTS='--reverse'    
 
-" Auto Pairs
+"Auto Pairs:"
      let g:AutoPairsFlyMode = 0
      let g:AutoPairsMultilineClose = 0
      au FileType html let b:AutoPairs = AutoPairsDefine({'<!--' : '-->'})
      au FileType css  let b:AutoPairs = AutoPairsDefine({'/*' : '*/'})
      au FileType javascript let b:AutoPairs = AutoPairsDefine({'/*' : '*/'})
 
-" Nerd Commenter
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 2
+"NERDCOMMENTER:"
+    " Add spaces after comment delimiters by default
+    let g:NERDSpaceDelims = 2
 
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
+    " Use compact syntax for prettified multi-line comments
+    let g:NERDCompactSexyComs = 1
 
-" LaTeX
-let g:vimtex_view_method = 'zathura'
-let g:vimtex_compiler_progname = 'latexmk'
+"LaTeX:"
+    let g:vimtex_view_method = 'zathura'
+    let g:vimtex_compiler_progname = 'latexmk'
 
-" DelimitMate
-" let delimitMate_expand_cr = 1
-" let delimitMate_expand_space = 1
+"DelimitMate:"
+    " let delimitMate_expand_cr = 1
+    " let delimitMate_expand_space = 1
 
-" Remove newbie crutches in Normal Mode
- nnoremap <Down> <Nop>
- nnoremap <Left> <Nop>
- nnoremap <Right> <Nop>
- nnoremap <Up> <Nop>
+"ABBREVIATIONS:"
+    iabbrev log console.log(
 
- " Remove newbie crutches in Visual Mode
- vnoremap <Down> <Nop>
- vnoremap <Left> <Nop>
- vnoremap <Right> <Nop>
- vnoremap <Up> <Nop>
+"Remove Arrows:"
+    " Remove newbie crutches in Normal Mode
+     nnoremap <Down> <Nop>
+     nnoremap <Left> <Nop>
+     nnoremap <Right> <Nop>
+     nnoremap <Up> <Nop>
+
+     " Remove newbie crutches in Visual Mode
+     vnoremap <Down> <Nop>
+     vnoremap <Left> <Nop>
+     vnoremap <Right> <Nop>
+     vnoremap <Up> <Nop>
 
 
-" AUTOCOMMANDS
-" augroup coc-explorer
-" au VimEnter * :if bufname()=='' | call execute('CocCommand explorer') | endif
-" augroup END
+"AUTOCOMMANDS:"
+    " augroup coc-explorer
+    " au VimEnter * :if bufname()=='' | call execute('CocCommand explorer') | endif
+    " augroup END
 
-" BONUS INFO
-    " with the youcompletme pluggin there always the [ID] to show what its a variable, i change it to [V] 
+"BONUS INFO:"
+    " With the youcompletme pluggin there always the [ID] to show what its a variable, i change it to [V] 
     " to put the default one change the line with extra_menu_info on the file identifier_completer.py :D
+
+
