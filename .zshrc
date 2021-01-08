@@ -14,10 +14,10 @@ ZSH_THEME="nicoulaj"
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
- ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE="true"
+# CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -27,7 +27,7 @@ CASE_SENSITIVE="true"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
-DISABLE_UPDATE_PROMPT="true"
+# DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -68,15 +68,13 @@ DISABLE_UPDATE_PROMPT="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git github zsh-syntax-highlighting zsh-autosuggestions k)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions k)
+
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-
-export TERM=termite
-export TERMINAL=termite
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -97,10 +95,10 @@ export TERMINAL=termite
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-#
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# 
 alias ls="exa"
 alias cp="cp -i"                                                # Confirm before overwriting something
 alias mv='mv -i'                                                # Confirm before overwriting something
@@ -128,8 +126,5 @@ alias clones='cd ~/clones'
 alias vi='nvim'
 alias live-server='live-server --no-browser'
 
-# pfetch on start
 pfetch
-
-
 
