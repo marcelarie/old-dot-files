@@ -75,8 +75,8 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 
-export TERM=kitty
-export TERMINAL=kitty
+export TERM=termite
+export TERMINAL=termite
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment

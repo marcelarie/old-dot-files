@@ -1,6 +1,6 @@
 "SETTINGS:"
     syntax on
-    set foldmethod=indent
+    autocmd FileType vim set foldmethod=indent
     set spelllang=en
     set nu
     set relativenumber 
