@@ -61,8 +61,8 @@
 
 "PLUG:"
     call plug#begin('~/.vim/plugged')
-    " Plug 'morhetz/gruvbox'
     Plug 'gruvbox-community/gruvbox/'
+    Plug 'phanviet/vim-monokai-pro'
     Plug 'mhartington/oceanic-next'
     Plug 'scrooloose/nerdtree'
     Plug 'tpope/vim-fugitive'
@@ -100,6 +100,7 @@
     "Plug 'nvim-telescope/telescope.nvim'
    
     " Forgotten:
+    " Plug 'morhetz/gruvbox'
     " Plug 'raimondi/delimitmate'
     " Plug 'lifepillar/vim-gruvbox8'
     " Plug 'vimwiki/vimwiki'
@@ -119,6 +120,7 @@
     call plug#end()
 
 "COLORSCHEME:"
+    "GruvBox:"
     colorscheme gruvbox
     set background=dark
     " if (has("termguicolors"))
