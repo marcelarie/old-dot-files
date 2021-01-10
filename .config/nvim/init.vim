@@ -1,3 +1,4 @@
+
 "SETTINGS:"
     syntax on
     autocmd FileType vim set foldmethod=indent
@@ -90,6 +91,8 @@
     Plug 'mbbill/undotree'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
     Plug 'nvim-treesitter/playground'
+    Plug 'nvim-treesitter/nvim-treesitter-refactor'
+
 
 
     
@@ -228,10 +231,13 @@
         \ 'coc-explorer',
         \ 'coc-html',
         \ 'coc-json',
+        \ 'coc-phpls',
         \ 'coc-lua',
         \ 'coc-sh',
         \ 'coc-rust-analyzer',
         \ 'coc-python',
+        \ 'coc-lists',
+        \ 'coc-git',
         \]
     "Coc Def Ref:"
         nmap <leader>gd <Plug>(coc-definition)
@@ -284,10 +290,8 @@
 "UndoTree:"
     nnoremap <leader>ut :UndotreeToggle<CR>
 
-" Tree-sitter based folding.
-    set foldmethod=expr
-    set foldexpr=nvim_treesitter#foldexpr()
-lua <<EOF
+"Tree Sitter:"
+:lua <<EOF
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
@@ -298,7 +302,19 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
-
+:lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
+}
+EOF
 
 
 "ABBREVIATIONS:"
@@ -329,6 +345,11 @@ EOF
 "BONUS INFO:"
     " With the youcompletme pluggin there always the [ID] to show what its a variable, i change it to [V] 
     " to put the default one change the line with extra_menu_info on the file identifier_completer.py :D
+    " 
+    " On Tree Sitter:
+    " Install languages:
+    " :TSInstall c bash html json css javascript php lua python regex rust
+    " typescript 
 
 
 
