@@ -1,6 +1,7 @@
 
 "SETTINGS:"
-    syntax on
+    " TreeSitter active
+    syntax off
     autocmd FileType vim set foldmethod=indent
     set spelllang=en
     autocmd FileType markdown txt set spell
@@ -61,10 +62,11 @@
 
 "PLUG:"
     call plug#begin('~/.vim/plugged')
-    Plug 'gruvbox-community/gruvbox/'
+    "Plug 'gruvbox-community/gruvbox/'
+    Plug 'lifepillar/vim-gruvbox8'
     Plug 'phanviet/vim-monokai-pro'
     Plug 'mhartington/oceanic-next'
-    Plug 'scrooloose/nerdtree'
+    "Plug 'scrooloose/nerdtree'
     Plug 'tpope/vim-fugitive'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -76,7 +78,7 @@
     Plug 'theprimeagen/vim-be-good'
     Plug 'itchyny/lightline.vim'
     Plug 'lilydjwg/colorizer'
-    Plug 'flazz/vim-colorschemes'
+    " Plug 'flazz/vim-colorschemes'
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(2) } }
     Plug 'szw/vim-maximizer'
     " Still testing
@@ -91,7 +93,6 @@
     Plug 'mbbill/undotree'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
     Plug 'nvim-treesitter/playground'
-    Plug 'nvim-treesitter/nvim-treesitter-refactor'
 
 
 
@@ -120,16 +121,15 @@
     call plug#end()
 
 "COLORSCHEME:"
-    "GruvBox:"
-    colorscheme gruvbox
-    set background=dark
+    colorscheme gruvbox8
+    " set background=dark
     " if (has("termguicolors"))
         " set termguicolors
     " endif
     
 "LIGHTLINE:"
     let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
+      \ 'colorscheme': 'gruvbox8',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
