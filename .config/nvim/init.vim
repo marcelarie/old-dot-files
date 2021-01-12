@@ -97,6 +97,10 @@
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
     Plug 'nvim-treesitter/playground'
     Plug 'honza/vim-snippets'
+    Plug 'prettier/vim-prettier', {
+          \ 'do': 'yarn install',
+          \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+          " \ 'for': ['css','json', 'markdown', 'yaml'] }
     
     " MAYBE LATER:
     "Plug 'nvim-telescope/telescope.nvim'
