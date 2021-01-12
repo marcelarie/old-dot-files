@@ -2,9 +2,11 @@
 "SETTINGS:"
     " TreeSitter active
     syntax off
+    filetype on
     autocmd FileType vim set foldmethod=indent
+    set foldnestmax=1
     set spelllang=en
-    autocmd FileType markdown txt set spell
+    autocmd FileType markdown set spell
     set nu
     set relativenumber 
     set noerrorbells
@@ -81,6 +83,7 @@
     " Plug 'flazz/vim-colorschemes'
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(2) } }
     Plug 'szw/vim-maximizer'
+    Plug 'alvan/vim-closetag'
     " Still testing
     Plug 'jiangmiao/auto-pairs'
     Plug 'jfonseca8/vim-bujo'
@@ -93,9 +96,7 @@
     Plug 'mbbill/undotree'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
     Plug 'nvim-treesitter/playground'
-
-
-
+    Plug 'honza/vim-snippets'
     
     " MAYBE LATER:
     "Plug 'nvim-telescope/telescope.nvim'
@@ -114,7 +115,6 @@
     " Plug 'roman/golden-ratio'
     " Plug 'rstacruz/vim-closer'
     " Plug 'hail2u/vim-css3-syntax'
-    " Plug 'alvan/vim-closetag'
     " Plug 'jiangmiao/auto-pairs'
     " Plug 'vim-airline/vim-airline'
     " Plug 'vim-airline/vim-airline-themes'
@@ -144,15 +144,6 @@
     " let fc = g:firenvim_config['localSettings']
     " let fc['https?://twitter.com/'] = { 'takeover': 'never', 'priority': 1 }
 
-"NERDTREE:"
-    " map <C-n> :NERDTreeToggle<CR>
-    let NERDTreeShowHidden=1
-    let g:typescript_indent_disable = 1
-
-
-"Auto Resize Windows:"
-    " let g:eighties_minimum_width = 125
-
 "Leader Keybindings:"
     let mapleader = " "
     " Open tab
@@ -160,6 +151,8 @@
     " Split screen
     map <leader>s :split<cr>
     map <leader>vs :vsplit<cr>
+    " Split screen and resize 55
+    nnoremap <leader>ss :wincmd v<bar> :Ex <bar> :vertical resize 55<CR>
     " Saves the file.
     map <leader>w :w<cr>
     " Saves the file with force.
@@ -184,8 +177,6 @@
     noremap <leader>8 8gt
     noremap <leader>9 9gt
     noremap <leader>0 :tablast<cr>
-    " Split screen and resize 55
-    nnoremap <leader>r :wincmd v<bar> :Ex <bar> :vertical resize 55<CR>
     " Fugitive Keybindings
     nmap <leader>g :G<CR>
     nmap <leader>gh :diffget //3<CR>
@@ -203,7 +194,6 @@
     nmap <Leader>t <Plug>BujoAddnormal
     nmap <Leader>x <Plug>BujoChecknormal
 
-
 "VCoolor:"
     nnoremap <leader>vc :VCoolor<CR>
 
@@ -211,20 +201,20 @@
     nmap <leader>lo :norm yssfconsole.log<CR> 
 
 "AutoRun:"
-    " AutoRun python files (SPACE+e) 
-    " Runs the code.
     " FOR PYTHON:
-        " autocmd FileType python map <buffer> <leader>e <esc>:w<CR>:8split term://python3 %<CR>
+        " Runs the code.
+            " autocmd FileType python map <buffer> <leader>e <esc>:w<CR>:8split term://python3 %<CR>
         " Runs the code but clears the terminal before.
-         "autocmd FileType python map <buffer> <leader>E <esc>:w<esc>:!clear<CR>:8split term://python shellescape(@%, 1)<CR>
+             "autocmd FileType python map <buffer> <leader>E <esc>:w<esc>:!clear<CR>:8split term://python shellescape(@%, 1)<CR>
     " FOR JS:
+        " Runs the code.
         autocmd FileType javascript map <buffer> <leader>we <esc>:w<CR>:8split term://node %<CR>
         " Runs just selected code
-        " autocmd FileType javascript map <buffer> <leader>c <esc>:w<CR>:8split '<,'>term://node %<CR>
+            " autocmd FileType javascript map <buffer> <leader>c <esc>:w<CR>:8split '<,'>term://node %<CR>
 
 "COC SETTINGS:"
     "COC EXPLORER:"
-        :nmap <space>e :CocCommand explorer<CR>
+        nmap <space>e :CocCommand explorer<CR>
     "CocAuto Install:"
     let g:coc_global_extensions = [
         \ 'coc-tsserver',
@@ -240,15 +230,20 @@
         \ 'coc-python',
         \ 'coc-lists',
         \ 'coc-git',
+        \ 'coc-snippets',
+        \ 'coc-marketplace',
         \]
     "Coc Def Ref:"
         nmap <leader>gd <Plug>(coc-definition)
         nmap <leader>gr <Plug>(coc-references)
+    "Coc Rename:"
+        " Symbol renaming.
+        nmap <leader>rn <Plug>(coc-rename)
 
     "CocVim KB:"
-    " Use tab for trigger completion with characters ahead and navigate.
-    " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-    " other plugin before putting this into your config.
+        " Use tab for trigger completion with characters ahead and navigate.
+        " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+        " other plugin before putting this into your config.
         inoremap <silent><expr> <TAB>
               \ pumvisible() ? "\<C-n>" :
               \ <SID>check_back_space() ? "\<TAB>" :
@@ -293,30 +288,7 @@
     nnoremap <leader>ut :UndotreeToggle<CR>
 
 "Tree Sitter:"
-:lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    custom_captures = {
-      -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
-      ["foo.bar"] = "Identifier",
-    },
-  },
-}
-EOF
-:lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = "gnn",
-      node_incremental = "grn",
-      scope_incremental = "grc",
-      node_decremental = "grm",
-    },
-  },
-}
-EOF
+lua require("treesitter")
 
 
 "ABBREVIATIONS:"
@@ -350,8 +322,4 @@ EOF
     " 
     " On Tree Sitter:
     " Install languages:
-    " :TSInstall c bash html json css javascript php lua python regex rust
-    " typescript 
-
-
-
+    " :TSInstall c bash html json css javascript php lua python regex rust typescript query
