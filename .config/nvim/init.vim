@@ -294,6 +294,8 @@
 "Tree Sitter:"
 lua require("treesitter")
 
+"CheatSh:"
+    nnoremap <leader>ch :Cheat<cr>
 
 "ABBREVIATIONS:"
     iabbrev log console.log(
