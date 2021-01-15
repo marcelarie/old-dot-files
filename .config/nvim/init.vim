@@ -79,7 +79,8 @@
     Plug 'KabbAmine/vCoolor.vim'
     Plug 'theprimeagen/vim-be-good'
     Plug 'itchyny/lightline.vim'
-    Plug 'lilydjwg/colorizer'
+    " Plug 'lilydjwg/colorizer'
+    Plug 'norcalli/nvim-colorizer.lua'
     " Plug 'flazz/vim-colorschemes'
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(2) } }
     Plug 'szw/vim-maximizer'
@@ -125,11 +126,10 @@
     call plug#end()
 
 "COLORSCHEME:"
+    if (has("termguicolors"))
+         set termguicolors
+    endif
     colorscheme gruvbox8
-    " set background=dark
-    " if (has("termguicolors"))
-        " set termguicolors
-    " endif
     
 "LIGHTLINE:"
     let g:lightline = {
@@ -166,10 +166,10 @@
     " Quits vim with force.
     map <leader>Q :q!<cr>
     " Changes windows
-    nnoremap <leader>l :wincmd l<CR>
     nnoremap <leader>h :wincmd h<CR>
     nnoremap <leader>j :wincmd j<CR>
     nnoremap <leader>k :wincmd k<CR>
+    nnoremap <leader>l :wincmd l<CR>
     " Go to tab by number
     noremap <leader>1 1gt
     noremap <leader>2 2gt
@@ -293,6 +293,8 @@
 
 "Tree Sitter:"
 lua require("treesitter")
+"ColorizerLua:""
+lua require'colorizer'.setup()
 
 "CheatSh:"
     nnoremap <leader>ch :Cheat<cr>
