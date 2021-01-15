@@ -7,7 +7,8 @@
         "html",
         "yaml",
         "json",
-        "python"
+        "python",
+        "sh"
     ],
     "tsserver.formatOnType": true,
     // python config
@@ -18,7 +19,5 @@
     "explorer.toggle": true,
     "explorer.previewAction.onHover": false,
     "explorer.icon.enableNerdfont": true,
-    "explorer.focus": true,
-    // Coc-pairs
-    "pairs.enableBackspace": true
+    "explorer.focus": true
 }
