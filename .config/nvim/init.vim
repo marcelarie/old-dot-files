@@ -170,6 +170,11 @@
     nnoremap <leader>j :wincmd j<CR>
     nnoremap <leader>k :wincmd k<CR>
     nnoremap <leader>l :wincmd l<CR>
+    " Resize vertical windows
+    nnoremap <Leader>+ :vertical resize +5<CR>
+    nnoremap <Leader>- :vertical resize -5<CR>
+    "Source init.vim
+    nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
     " Go to tab by number
     noremap <leader>1 1gt
     noremap <leader>2 2gt
@@ -292,6 +297,7 @@
     nnoremap <leader>ut :UndotreeToggle<CR>
 
 "Tree Sitter:"
+lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
 lua require("treesitter")
 "ColorizerLua:""
 lua require'colorizer'.setup()
@@ -331,3 +337,4 @@ lua require'colorizer'.setup()
     " On Tree Sitter:
     " Install languages:
     " :TSInstall c bash html json css javascript php lua python regex rust typescript query
+    "
