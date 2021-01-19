@@ -55,6 +55,8 @@
     " Turning off compatibility with old vi.
     set nocompatible
     filetype plugin on
+    " Autoread
+    " set autoread
     " Two spaces tabs
     " set cmdheight=2
     "2 tabs
@@ -161,10 +163,14 @@
     map <leader>w :w<cr>
     " Saves the file with force.
     map <leader>W :w!<cr>
+    " Saves the file with force.
+    map <leader>W :w!<cr>
     " Quits vim.
     map <leader>q :q<cr>
     " Quits vim with force.
     map <leader>Q :q!<cr>
+    " Autoread.(editor)
+    map <leader>a :e<cr>
     " Changes windows
     nnoremap <leader>h :wincmd h<CR>
     nnoremap <leader>j :wincmd j<CR>
@@ -190,10 +196,10 @@
     nmap <leader>g :G<CR>
     nmap <leader>gh :diffget //3<CR>
     nmap <leader>gl :diffget //2<CR>
-    nmap <leader>c :Gcommit<CR> 
+    nmap <leader>gc :Gcommit<CR> 
     autocmd Filetype fugitive nmap <leader>p :Gpush<bar> :q<CR> 
     nmap <leader>gb :GBranches<CR> 
-    nmap <leader>re :Rg<CR> 
+    nmap <leader>r :Rg<CR> 
     nmap <leader>f :Buffers<CR> 
     nnoremap <C-p> :GFiles<CR>
     " Maximizer
