@@ -1,5 +1,5 @@
-" Open in vertical split
-let g:netrw_browse_split = 2
+" Open directly
+let g:netrw_browse_split = 0
 " No banner
 let g:netrw_banner = 0
 " Winsize
