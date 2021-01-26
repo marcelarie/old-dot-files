@@ -196,7 +196,7 @@
     nmap <leader>g :G<CR>
     nmap <leader>gh :diffget //3<CR>
     nmap <leader>gl :diffget //2<CR>
-    nmap <leader>gc :Gcommit<CR> 
+    nmap <leader>c :Gcommit<CR> 
     autocmd Filetype fugitive nmap <leader>p :Gpush<bar> :q<CR> 
     nmap <leader>gb :GBranches<CR> 
     nmap <leader>r :Rg<CR> 
@@ -343,4 +343,10 @@ lua require'colorizer'.setup()
     " On Tree Sitter:
     " Install languages:
     " :TSInstall c bash html json css javascript php lua python regex rust typescript query
-    "
+    " On Vim Surround:
+    " cs"' >> change \" to \'
+    " cs'<q> >> change it to <q>
+    " ds" >> delete "
+    " ysiw] >> surround word with []
+    " cs]{ >> change [ for {
+    " yssb >> wrap whole line
