@@ -5,7 +5,7 @@
     filetype on
     autocmd FileType vim set foldmethod=indent
     set foldnestmax=1
-    set spelllang=en
+    autocmd FileType markdown set spelllang=en
     autocmd FileType markdown set spell
     set nu
     set relativenumber 
@@ -172,10 +172,10 @@
     " Autoread.(editor)
     map <leader>a :e<cr>
     " Changes windows
-    nnoremap <leader>h :wincmd h<CR>
-    nnoremap <leader>j :wincmd j<CR>
-    nnoremap <leader>k :wincmd k<CR>
-    nnoremap <leader>l :wincmd l<CR>
+    nnoremap <left> :wincmd h<CR>
+    nnoremap <down> :wincmd j<CR>
+    nnoremap <up> :wincmd k<CR>
+    nnoremap <right> :wincmd l<CR>
     " Resize vertical windows
     nnoremap <Leader>+ :vertical resize +5<CR>
     nnoremap <Leader>- :vertical resize -5<CR>
@@ -314,20 +314,6 @@ lua require'colorizer'.setup()
 "ABBREVIATIONS:"
     iabbrev log console.log(
     iabbrev $ $(
-
-
-"Remove Arrows:"
-    " Remove newbie crutches in Normal Mode
-     nnoremap <Down> <Nop>
-     nnoremap <Left> <Nop>
-     nnoremap <Right> <Nop>
-     nnoremap <Up> <Nop>
-
-     " Remove newbie crutches in Visual Mode
-     vnoremap <Down> <Nop>
-     vnoremap <Left> <Nop>
-     vnoremap <Right> <Nop>
-     vnoremap <Up> <Nop>
 
 "VimRC Keybindings:"
 
