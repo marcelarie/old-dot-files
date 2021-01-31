@@ -5,8 +5,8 @@
     filetype on
     autocmd FileType vim set foldmethod=indent
     set foldnestmax=1
-    set spelllang=en
-    autocmd FileType markdown set spell
+    " autocmd FileType markdown set spell
+    set spelllang=en,es
     set nu
     set relativenumber 
     set noerrorbells
