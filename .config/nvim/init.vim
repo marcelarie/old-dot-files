@@ -100,6 +100,7 @@
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
     Plug 'nvim-treesitter/playground'
     Plug 'honza/vim-snippets'
+    Plug 'stephpy/vim-php-cs-fixer'
     Plug 'prettier/vim-prettier', {
           \ 'do': 'yarn install',
           \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
@@ -163,8 +164,6 @@
     map <leader>w :w<cr>
     " Saves the file with force.
     map <leader>W :w!<cr>
-    " Saves the file with force.
-    map <leader>W :w!<cr>
     " Quits vim.
     map <leader>q :q<cr>
     " Quits vim with force.
@@ -172,10 +171,10 @@
     " Autoread.(editor)
     map <leader>a :e<cr>
     " Changes windows
-    nnoremap <left> :wincmd h<CR>
-    nnoremap <down> :wincmd j<CR>
-    nnoremap <up> :wincmd k<CR>
-    nnoremap <right> :wincmd l<CR>
+    nnoremap <leader>h :wincmd h<CR>
+    nnoremap <leader>j :wincmd j<CR>
+    nnoremap <leader>k :wincmd k<CR>
+    nnoremap <leader>l :wincmd l<CR>
     " Resize vertical windows
     nnoremap <Leader>+ :vertical resize +5<CR>
     nnoremap <Leader>- :vertical resize -5<CR>
@@ -315,7 +314,28 @@ lua require'colorizer'.setup()
     iabbrev log console.log(
     iabbrev $ $(
 
+
+"Remove Arrows:"
+    " Remove newbie crutches in Normal Mode
+     nnoremap <Down> <Nop>
+     nnoremap <Left> <Nop>
+     nnoremap <Right> <Nop>
+     nnoremap <Up> <Nop>
+
+     " Remove newbie crutches in Visual Mode
+     vnoremap <Down> <Nop>
+     vnoremap <Left> <Nop>
+     vnoremap <Right> <Nop>
+     vnoremap <Up> <Nop>
+
 "VimRC Keybindings:"
+
+"PHP CS FIXER:
+    let g:php_cs_fixer_path = "~/programs/php-cs-fixer-v2.phar"
+    " Format on save (only php files)
+    autocmd FileType php map <leader>w :w <bar> :call PhpCsFixerFixFile()<cr><cr>
+    " nnoremap <silent><leader>pf :call PhpCsFixerFixFile()<CR>
+
 
 "AUTOCOMMANDS:"
     " augroup coc-explorer
