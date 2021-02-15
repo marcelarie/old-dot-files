@@ -5,13 +5,8 @@
     filetype on
     autocmd FileType vim set foldmethod=indent
     set foldnestmax=1
-<<<<<<< HEAD
-    autocmd FileType markdown set spelllang=en
-    autocmd FileType markdown set spell
-=======
     " autocmd FileType markdown set spell
     set spelllang=en,es
->>>>>>> 9eb65f974b2f970b85fb6fb9068b7d708056e8ba
     set nu
     set relativenumber 
     set noerrorbells
@@ -32,12 +27,22 @@
     " :set nosmartcase
     set smartcase
     " disable creating swap files entirely.
-    set noswapfile
-    set nobackup
-    " create a undodir for persisten undo 
-    " after vim closes.
-    set undodir=~/.vim/undodir
-    set undofile
+        " set nobackup
+        " set noswapfile
+        " create a undodir for persisten undo 
+        " after vim closes.
+        " set undodir=~/.vim/undodir
+        " set undofile
+   " Turn on backup option
+    set backup
+    "Where to store backups
+    set backupdir=~/.vim/backup//
+    "Make backup before overwriting the current buffer
+    set writebackup
+    "Overwrite the original backup file
+    set backupcopy=yes
+    "Meaningful backup name, ex: filename@2015-04-05.14:59
+    au BufWritePre * let &bex = '@' . strftime("%F.%H:%M")
     " incremental search to move the 
     " highlight as you add characters.
     set incsearch
@@ -200,8 +205,8 @@
     nmap <leader>g :G<CR>
     nmap <leader>gh :diffget //3<CR>
     nmap <leader>gl :diffget //2<CR>
-    nmap <leader>c :Gcommit<CR> 
-    autocmd Filetype fugitive nmap <leader>p :Gpush<bar> :q<CR> 
+    nmap <leader>c :Git commit<CR> 
+    autocmd Filetype fugitive nmap <leader>p :Git push<bar> :q<CR> 
     nmap <leader>gb :GBranches<CR> 
     nmap <leader>r :Rg<CR> 
     nmap <leader>f :Buffers<CR> 
