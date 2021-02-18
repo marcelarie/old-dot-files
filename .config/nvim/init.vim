@@ -36,7 +36,7 @@
    " Turn on backup option
     set backup
     "Where to store backups
-    set backupdir=~/.vim/backup//
+    set backupdir=~/.vim/backup
     "Make backup before overwriting the current buffer
     set writebackup
     "Overwrite the original backup file
@@ -254,6 +254,8 @@
         \ 'coc-python',
         \ 'coc-lists',
         \ 'coc-git',
+        \ 'coc-sql',
+        \ 'coc-db',
         \ 'coc-snippets',
         \ 'coc-marketplace',
         \]
