@@ -31,8 +31,8 @@
         " set noswapfile
         " create a undodir for persisten undo 
         " after vim closes.
-        " set undodir=~/.vim/undodir
-        " set undofile
+        set undofile
+        set undodir=~/.vim/undodir
    " Turn on backup option
     set backup
     "Where to store backups
@@ -312,10 +312,10 @@
     " let delimitMate_expand_space = 1
 
 "VimG Google:"
-    let g:vim_g_command = "Go"
-    let g:vim_g_f_command = "Gf"
-    map <leader>go :Go<cr>
-    map <leader>gf :Gf<cr>
+  let g:vim_g_command = "Go"
+  let g:vim_g_f_command = "Gf"
+  map <leader>go :Go<cr>
+  map <leader>gf :Gf<cr>
 
 
 "UndoTree:"
@@ -333,6 +333,7 @@ lua require'colorizer'.setup()
 "ABBREVIATIONS:"
     iabbrev log console.log(
     iabbrev $ $(
+
 
 "Remove Arrows:"
     " Remove newbie crutches in Normal Mode
