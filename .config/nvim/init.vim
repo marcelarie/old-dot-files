@@ -98,6 +98,7 @@
     Plug 'szw/vim-maximizer'
     Plug 'alvan/vim-closetag'
     " Still testing
+    Plug 'szw/vim-g'
     Plug 'jiangmiao/auto-pairs'
     Plug 'jfonseca8/vim-bujo'
     Plug 'scrooloose/nerdcommenter'
@@ -309,6 +310,13 @@
 "DelimitMate:"
     " let delimitMate_expand_cr = 1
     " let delimitMate_expand_space = 1
+
+"VimG Google:"
+  let g:vim_g_command = "Go"
+  let g:vim_g_f_command = "Gf"
+  map <leader>go :Go<cr>
+  map <leader>gf :Gf<cr>
+
 
 "UndoTree:"
     nnoremap <leader>ut :UndotreeToggle<CR>
