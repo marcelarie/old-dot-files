@@ -116,6 +116,11 @@
           \ 'do': 'yarn install',
           \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
           " \ 'for': ['css','json', 'markdown', 'yaml'] }
+    " Telescope
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-telescope/telescope-fzy-native.nvim'
     
     " MAYBE LATER:
     "Plug 'nvim-telescope/telescope.nvim'
@@ -209,7 +214,7 @@
     nmap <leader>c :Git commit<CR> 
     autocmd Filetype fugitive nmap <leader>p :Git push<bar> :q<CR> 
     nmap <leader>gb :GBranches<CR> 
-    nmap <leader>r :Rg<CR> 
+    " nmap <leader>r :Rg<CR> 
     nmap <leader>f :Buffers<CR> 
     nnoremap <C-p> :GFiles<CR>
     " Maximizer
@@ -222,7 +227,7 @@
 "VCoolor:"
     nnoremap <leader>vc :VCoolor<CR>
 
-"SurroundVim:"
+"SurroundVim: q"
     nmap <leader>lo :norm yssfconsole.log<CR> 
 
 "AutoRun:"
