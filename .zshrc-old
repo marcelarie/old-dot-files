@@ -209,4 +209,4 @@ case $(basename "$(cat "/proc/$PPID/comm")") in
     ;;
 esac
 ### SETS VI MODE ###
-bindkey -v
+# bindkey -v
