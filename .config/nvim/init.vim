@@ -264,6 +264,10 @@
         \ 'coc-db',
         \ 'coc-snippets',
         \ 'coc-marketplace',
+        \ 'coc-emoji',
+        \ 'coc-scssmodules',
+        \ 'coc-html-css-support',
+        \ 'coc-word'
         \]
     "Coc Def Ref:"
         nmap <leader>gd <Plug>(coc-definition)
@@ -355,7 +359,6 @@ lua require'colorizer'.setup()
 
 "VimRC Keybindings:"
 
-"PHP CS FIXER:
     let g:php_cs_fixer_path = "~/programs/php-cs-fixer-v2.phar"
     " Format on save (only php files)
     autocmd FileType php map <leader>w :w <bar> :call PhpCsFixerFixFile()<cr><cr>
