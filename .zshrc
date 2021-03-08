@@ -131,14 +131,16 @@ alias ...='cd ../..'
 alias ...='cd ../../..'
 alias gomain='git checkout main'
 alias cat='bat'
-alias gb='git checkout $(git branch | fzf)'
+alias gb='git checkout $(git branch | fzf --height 50%)'
 alias rc='nvim ~/.config/nvim/init.vim'
 alias zrc='nvim ~/.zshrc'
-alias clones='cd ~/clones'
-alias vi='nvim'
+alias clones='~/clones'
+alias dots='~/clones/dot-files'
+alias vi='nvim .'
 alias live-server='live-server --no-browser'
 alias fzf="fzf --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'"
 alias history="history | fzf --height 40%"
+alias hist="history | fzf --height 40%"
 
 pfetch
 
