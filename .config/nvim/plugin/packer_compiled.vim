@@ -44,9 +44,25 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/completion-nvim"
   },
+  ["galaxyline.nvim"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
+  },
+  gruvbox = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/gruvbox"
+  },
+  ["lightline.vim"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/lightline.vim"
+  },
   ["lsp_extensions.nvim"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/lsp_extensions.nvim"
+  },
+  nerdcommenter = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/nerdcommenter"
   },
   ["nlua.nvim"] = {
     loaded = true,
@@ -60,13 +76,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
-  ["nvim-lspinstall"] = {
+  ["nvim-luapad"] = {
     loaded = true,
-    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/nvim-luapad"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["oceanic-next"] = {
     loaded = true,
@@ -89,6 +113,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
+  ["startuptime.vim"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/startuptime.vim"
+  },
   ["telescope-fzy-native.nvim"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
@@ -97,9 +125,29 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
+  undotree = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/undotree"
+  },
+  ["vim-closetag"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-closetag"
+  },
+  ["vim-devicons"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-devicons"
+  },
+  ["vim-g"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-g"
+  },
   ["vim-gruvbox8"] = {
     loaded = true,
     path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-gruvbox8"
+  },
+  ["vim-lsp-settings"] = {
+    loaded = true,
+    path = "/home/marcel/.local/share/nvim/site/pack/packer/start/vim-lsp-settings"
   },
   ["vim-monokai-pro"] = {
     loaded = true,

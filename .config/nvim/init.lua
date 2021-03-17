@@ -1,5 +1,5 @@
-require('plugins')
 require('colorscheme')
+require('plugins')
 require('leader-remaps')
 require('settings')
 require('aliases')
@@ -9,6 +9,7 @@ require('nerd-commenter')
 require('autopairs')
 require('undo-tree')
 require('vimg')
+require('web-devicons')
 
 require('treesitter')
 
@@ -27,7 +28,12 @@ require('lsp.css')
 require('lsp.php')
 
 require('formatting')
+-- require('lspsaga')
+--
+-- require('nvim-tree')
+-- require('lightline')
+-- require('galaxyline')
 
-vim.cmd([[augroup highlight_yank autocmd!  autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40}) augroup END]]);
-
+-- vim.cmd('source ~/.config/nvim/vimscript/lualine.vim')
+-- vim.cmd([[augroup highlight_yank autocmd!  autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40}) augroup END]]);
 

@@ -31,6 +31,7 @@ use 'nvim-telescope/telescope.nvim'
 use 'nvim-telescope/telescope-fzy-native.nvim'                                               
 
 -- LSP 
+use 'neovim/nvim-lsp'
 use 'neovim/nvim-lspconfig'
 use 'nvim-lua/completion-nvim'
 use 'mattn/vim-lsp-settings'
@@ -69,15 +70,36 @@ use 'rafcamlet/nvim-luapad'
 -- vimG
 use 'szw/vim-g'
 
-
 -- vim closetag
 use 'alvan/vim-closetag'
 
+-- light line
+use 'itchyny/lightline.vim'
+
+-- lua line
+-- use 'hoob3rt/lualine.nvim'
+
+-- galaxyline
+-- use 'glepnir/galaxyline.nvim'
+    
+-- nvim web devicons
+use 'kyazdani42/nvim-web-devicons'
+use 'ryanoasis/vim-devicons'
+
+-- Startup time
+use 'tweekmonster/startuptime.vim'
+
+-- LSPsaga
+-- use 'glepnir/lspsaga.nvim'
+
+-- nvim tree
+-- use 'kyazdani42/nvim-tree.lua'
 -- LSPInstall
 -- use 'anott03/nvim-lspinstall'
 
--- UltiSNips
+-- UltiSnips and vim snips
+use 'honza/vim-snippets'
 -- use 'SirVer/ultisnips'
--- use 'thomasfaingnaert/vim-lsp-snippets'
+use 'thomasfaingnaert/vim-lsp-snippets'
 -- use 'thomasfaingnaert/vim-lsp-ultisnips'
 end)

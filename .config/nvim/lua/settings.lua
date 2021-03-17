@@ -1,20 +1,17 @@
 -- Still on research (?)
-vim.cmd([[
-set spelllang=en,es
-set undofile                                                       
-set undodir=~/.vim/undodir                                         
-set backup                                                             
-set backupdir=~/.vim/backup                                            
-set writebackup                                                        
-set backupcopy=yes                                                     
-au BufWritePre * let &bex = '@' . strftime("%F.%H:%M")
-set noshowcmd                                                          
-set nohlsearch
-set incsearch
-set nocompatible
-set noerrorbells
-]])
-
+vim.cmd('set spelllang=en,es')
+vim.cmd('set undofile')
+vim.cmd('set undodir=~/.vim/undodir')
+vim.cmd('set backup')
+vim.cmd('set backupdir=~/.vim/backup')
+vim.cmd('set writebackup')
+vim.cmd('set backupcopy=yes')
+vim.cmd('set noshowcmd')
+vim.cmd('set nohlsearch')
+vim.cmd('set incsearch')
+vim.cmd('set nocompatible')
+vim.cmd('set noerrorbells')
+vim.cmd('set noswapfile')
 
 -- Global options
 vim.o.splitbelow=true  -- Horizontal splits will automatically be below

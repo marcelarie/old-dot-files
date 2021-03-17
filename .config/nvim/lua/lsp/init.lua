@@ -11,13 +11,12 @@ vim.cmd('set completeopt=menuone,noinsert,noselect')
 vim.cmd("set shortmess+=c")
 vim.cmd("let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']")
 
-
-
-vim.cmd('nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>')
-vim.cmd('nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>')
-vim.cmd('nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>')
-vim.cmd('nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>')
-vim.cmd('nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>')
+vim.cmd('nnoremap <leader>gd <cmd>lua vim.lsp.buf.definition()<CR>')
+vim.cmd('nnoremap <leader>gD <cmd>lua vim.lsp.buf.declaration()<CR>')
+vim.cmd('nnoremap <leader>gr <cmd>lua vim.lsp.buf.references()<CR>')
+vim.cmd('nnoremap <leader>gi <cmd>lua vim.lsp.buf.implementation()<CR>')
+vim.cmd('nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>')
+vim.cmd('nnoremap <silent>K <cmd>lua vim.lsp.buf.hover()<CR>')
 
 -- nnoremap <leader>vd :lua vim.lsp.buf.definition()<CR>
 -- nnoremap <leader>vi :lua vim.lsp.buf.implementation()<CR>
