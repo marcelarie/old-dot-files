@@ -10,6 +10,11 @@ export ZSH="/home/marcel/.oh-my-zsh"
 ### "bat" as manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+## go
+export PATH=/home/$USER/.cargo/bin:$PATH
+export GOPATH=$HOME/.local/go
+
+
 ### "vim" as manpager
 # export MANPAGER='/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
 
@@ -80,7 +85,7 @@ ZSH_THEME="nicoulaj"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions k)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions mongodb k)
 
 
 source $ZSH/oh-my-zsh.sh
@@ -131,16 +136,27 @@ alias ...='cd ../..'
 alias ...='cd ../../..'
 alias gomain='git checkout main'
 alias cat='bat'
-alias gb='git checkout $(git branch | fzf --height 50%)'
-alias rc='nvim ~/.config/nvim/init.vim'
+alias gb='git checkout $(git branch | fzy)'
+alias rc='nvim ~/.config/nvim/init.*'
 alias zrc='nvim ~/.zshrc'
 alias clones='~/clones'
 alias dots='~/clones/dot-files'
-alias vi='nvim .'
+alias vi='nvim'
+alias revi='bash ~/scripts/install-last-neovim.sh'
+alias gorc='cd ~/.config/nvim/'
 alias live-server='live-server --no-browser'
 alias fzf="fzf --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'"
-alias history="history | fzf --height 40%"
-alias hist="history | fzf --height 40%"
+alias history="history | fzy"
+alias pt="vi ~/personal/tasks"
+alias gopt="cd ~/personal/tasks"
+alias oldvi="vi -u .config/old-nvim/init.vim"
+alias wbcn="curl wttr.in/Barcelona\?0Q"
+alias create-react-app="create-react-app --template mini"
 
 pfetch
+# wbcn
+# DEFAULT => (?)
+xset r rate 350 45
 
+
+alias mon2cam="deno run --unstable -A -r -q https://raw.githubusercontent.com/ShayBox/Mon2Cam/master/src/mod.ts"
