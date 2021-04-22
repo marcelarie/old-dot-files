@@ -117,11 +117,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # 
 alias ls="exa"
-alias cp="cp -i"                                                # Confirm before overwriting something
-alias mv='mv -i'                                                # Confirm before overwriting something
-alias rm='rm -i'                                                # Confirm before overwriting something
-alias df='df -h'                                                # Human-readable sizes
-alias free='free -m'                                            # Show sizes in MB
+alias cp="cp -i"   	 # Confirm before overwriting something
+alias mv='mv -i'   	 # Confirm before overwriting something
+alias rm='rm -i'   	 # Confirm before overwriting something
+alias df='df -h'   	 # Human-readable sizes
+alias free='free -m'     # Show sizes in MB
 alias ls='exa'
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
@@ -142,6 +142,7 @@ alias zrc='nvim ~/.zshrc'
 alias clones='~/clones'
 alias dots='~/clones/dot-files'
 alias vi='nvim'
+alias bi='nvim -c "colorscheme OceanicNext"'
 alias revi='bash ~/scripts/install-last-neovim.sh'
 alias gorc='cd ~/.config/nvim/'
 alias live-server='live-server --no-browser'
@@ -155,8 +156,9 @@ alias create-react-app="create-react-app --template mini"
 
 pfetch
 # wbcn
-# DEFAULT => (?)
-xset r rate 350 45
+# DEFAULT => (?) 650 25
+xset r rate 210 40
+# xset r rate 150 45
 
 
 alias mon2cam="deno run --unstable -A -r -q https://raw.githubusercontent.com/ShayBox/Mon2Cam/master/src/mod.ts"
