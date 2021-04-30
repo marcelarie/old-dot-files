@@ -117,11 +117,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # 
 alias ls="exa"
-alias cp="cp -i"   	 # Confirm before overwriting something
-alias mv='mv -i'   	 # Confirm before overwriting something
-alias rm='rm -i'   	 # Confirm before overwriting something
-alias df='df -h'   	 # Human-readable sizes
-alias free='free -m'     # Show sizes in MB
+alias cp="cp -i"                                                # Confirm before overwriting something
+alias mv='mv -i'                                                # Confirm before overwriting something
+alias rm='rm -i'                                                # Confirm before overwriting something
+alias df='df -h'                                                # Human-readable sizes
+alias free='free -m'                                            # Show sizes in MB
 alias ls='exa'
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
@@ -137,6 +137,7 @@ alias ...='cd ../../..'
 alias gomain='git checkout main'
 alias cat='bat'
 alias gb='git checkout $(git branch | fzy)'
+alias gbde='git branch -D $(git branch | fzy)'
 alias rc='nvim ~/.config/nvim/init.*'
 alias zrc='nvim ~/.zshrc'
 alias clones='~/clones'
@@ -150,15 +151,10 @@ alias fzf="fzf --preview '([[ -f {} ]] && (bat --style=numbers --color=always {}
 alias history="history | fzy"
 alias pt="vi ~/personal/tasks"
 alias gopt="cd ~/personal/tasks"
-alias oldvi="vi -u .config/old-nvim/init.vim"
 alias wbcn="curl wttr.in/Barcelona\?0Q"
 alias create-react-app="create-react-app --template mini"
+alias cry\$="curl rate.sx"
 
-pfetch
-# wbcn
-# DEFAULT => (?) 650 25
-xset r rate 210 40
-# xset r rate 150 45
 
 
 alias mon2cam="deno run --unstable -A -r -q https://raw.githubusercontent.com/ShayBox/Mon2Cam/master/src/mod.ts"
